@@ -1,0 +1,99 @@
+<script>
+
+ //main function for checking all data types
+
+function checkDataType(a){                
+
+//when no value is assigned to variable(undefined)
+
+    if(typeof(a)=="undefined")           
+    {
+        return 'UN';
+    }
+
+//when null value is assigned
+    else if(a===null)            
+    {
+        return 'Null';
+    } 
+
+//when array is stored in variable
+    else if(a.constructor == Array)
+    {
+    
+    //when array of objects are stored
+        if (a[0].constructor == Object)
+        {
+        //map function and arrow function are implemented
+            b=a.map((x)=>{console.log(x)});
+            return "AofO";
+        }
+        else
+        {
+            return 'Arr';
+        }
+    }   
+
+    //when objects are passed to variable
+    else if(a.constructor===Object)
+    {
+        return "Ob";
+    }
+
+    //when string is passed to variable
+    else if(a.constructor===String)
+    {
+        return "Str";
+    }
+
+    //when numbers are stored in variable
+    else if(a.constructor===Number)
+    {
+        return "Numb";
+    }
+
+    //when boolean values are passed
+    else if(a.constructor===Boolean)
+    {
+        return "Bool";
+    }
+}
+
+//console.log(x);     
+var x=[{'a':1},{'b':2},{'c':3},{'d':4}];    //test case for arry of objects
+//var x=3;                                      //test case for numeric integer
+//var x="abc";                                //test case for string
+//var x=true;                                 //test case for boolean value
+//var x=null;                                 //test case for null value
+//var x=[1,2,3,4];                            //test case for array type
+//var x={'a':4};                              //test case for objects
+//var x;                                      //test case for undefined 
+
+
+var result=checkDataType(x);
+
+if(result=='Arr')
+console.log("ARRAY");
+
+if(result=='Ob')
+console.log("OBJECT");
+
+if(result=='Str')
+console.log("STRING");
+
+if(result=='Numb')
+console.log("NUMBER");
+
+if(result=='Bool')
+console.log("BOOLEAN");
+
+if(result=='Null')
+console.log("Null");
+
+if(result=='UN')
+console.log("UNDEFINED");
+
+if(result=='AofO')
+console.log("Array of object");
+
+</script>
